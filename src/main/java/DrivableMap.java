@@ -29,8 +29,14 @@ class DrivableMap {
      */
 
     public boolean addDrivable(String id, Drivable obj) {
-        drivable_map.putIfAbsent(id, obj);
-        return true;
+        if (!(drivable_map.containsKey(id))) {
+            drivable_map.put(id, obj);
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
 
 
